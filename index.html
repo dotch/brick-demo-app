@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
+
     <meta charset="utf-8">
     <title>Contacts</title>
     <style>
@@ -28,9 +29,9 @@
 
     </style>
     <link rel="stylesheet" href="//code.cdn.mozilla.net/fonts/fira.css">
-  </head>
-  <body>
     <script src="bower_components/platform/platform.js"></script>
+  </head>
+  <body unresolved>
     <link rel="import" href="bower_components/brick/dist/brick.html">
 
     <!-- the database -->
@@ -101,37 +102,38 @@
     var form = document.querySelector("#detail-form");
     // generate sample data:
     var store = document.querySelector("#peoplestore");
-    window.addEventListener("webcomponentsready", function () {
-    store.size()
-      .then(function (size) {
-        if (size === 0) {
-          return store.setMany([
-            {"name":"Ariadne"},
-            {"name":"Arthur"},
-            {"name":"Dominick Cobb"},
-            {"name":"Darren Bartel"},
-            {"name":"Eames"},
-            {"name":"James Cobb"},
-            {"name":"Mr. Kaneda"},
-            {"name":"Mallorie Cobb"},
-            {"name":"Marie"},
-            {"name":"Maurice Fischer"},
-            {"name":"Nash"},
-            {"name":"Paulson"},
-            {"name":"Peter Browning"},
-            {"name":"Phillipa Cobb"},
-            {"name":"Robert Fischer"},
-            {"name":"Saito"},
-            {"name":"Stephen Miles"},
-            {"name":"Tadashi"},
-            {"name":"Thin Man"},
-            {"name":"Yusuf"},
-          ]);
-        }
-      })
-      .then(function () {
-        list.render();
-      });
+    window.addEventListener("WebComponentsReady", function () {
+      document.body.removeAttribute("unresolved");
+      store.size()
+        .then(function (size) {
+          if (size === 0) {
+            return store.setMany([
+              {"name":"Ariadne"},
+              {"name":"Arthur"},
+              {"name":"Dominick Cobb"},
+              {"name":"Darren Bartel"},
+              {"name":"Eames"},
+              {"name":"James Cobb"},
+              {"name":"Mr. Kaneda"},
+              {"name":"Mallorie Cobb"},
+              {"name":"Marie"},
+              {"name":"Maurice Fischer"},
+              {"name":"Nash"},
+              {"name":"Paulson"},
+              {"name":"Peter Browning"},
+              {"name":"Phillipa Cobb"},
+              {"name":"Robert Fischer"},
+              {"name":"Saito"},
+              {"name":"Stephen Miles"},
+              {"name":"Tadashi"},
+              {"name":"Thin Man"},
+              {"name":"Yusuf"},
+            ]);
+          }
+        })
+        .then(function () {
+          list.render();
+        });
     });
 
     list.addEventListener("select", function (e) {
