@@ -99,6 +99,38 @@
     var list = document.querySelector("#contact-list");
     var detail = document.querySelector("#contact-detail-card");
     var form = document.querySelector("#detail-form");
+    // generate sample data:
+    var store = document.querySelector("#peoplestore");
+    store.size()
+      .then(function (size) {
+        if (size === 0) {
+          return store.setMany([
+            {"name":"Ariadne"},
+            {"name":"Arthur"},
+            {"name":"Dominick Cobb"},
+            {"name":"Darren Bartel"},
+            {"name":"Eames"},
+            {"name":"James Cobb"},
+            {"name":"Mr. Kaneda"},
+            {"name":"Mallorie Cobb"},
+            {"name":"Marie"},
+            {"name":"Maurice Fischer"},
+            {"name":"Nash"},
+            {"name":"Paulson"},
+            {"name":"Peter Browning"},
+            {"name":"Phillipa Cobb"},
+            {"name":"Robert Fischer"},
+            {"name":"Saito"},
+            {"name":"Stephen Miles"},
+            {"name":"Tadashi"},
+            {"name":"Thin Man"},
+            {"name":"Yusuf"},
+          ]);
+        }
+      })
+      .then(function () {
+        list.render();
+      });
     list.addEventListener("select", function (e) {
       detail.reveal();
       form.setAttribute("name",e.detail.name);
