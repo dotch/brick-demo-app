@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Contacts</title>
+    <style>
+      *, brick-listview .item {
+        font-family: Fira Sans, sans-serif;
+      }
+      body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+      }
+      brick-appbar {
+        border-bottom: 1px solid black;
+      }
+      brick-tabbar {
+        border-top: 1px solid black;
+      }
+      brick-tabbar-tab[selected] {
+        color: black;
+      }
+      brick-form {
+        padding: 15px;
+      }
+
+    </style>
+    <link rel="stylesheet" href="//code.cdn.mozilla.net/fonts/fira.css">
+  </head>
+  <body>
+    <script src="bower_components/platform/platform.js"></script>
+    <link rel="import" href="bower_components/brick/dist/brick.html">
+
+    <!-- the database -->
+    <brick-storage-indexeddb name="people" keyname="name" id="peoplestore">
+    </brick-storage-indexeddb>
+
+    <!-- the main layout -->
+    <brick-layout>
+      <!-- the content -->
+      <brick-deck selected-index="0">
+
+        <!-- people list -->
+        <brick-card selected id="contact">
+          <brick-deck selected-index="0" transition-type="slide-left">
+            <brick-card selected id="contact-list-card">
+              <brick-layout>
+                <brick-appbar>
+                  <h1>Contacts</h1>
+                </brick-appbar>
+                <brick-listview flex storage="peoplestore" label="name" id="contact-list">
+                </brick-listview>
+              </brick-layout>
+            </brick-card>
+            <brick-card id="contact-detail-card">
+              <brick-layout>
+                <brick-appbar>
+                  <button id="back">back</button>
+                  <brick-action source="back" target="contact-list-card" action="reveal">
+                  </brick-action>
+                  <h1>Detail</h1>
+                </brick-appbar>
+                <brick-form storage="peoplestore" id="detail-form">
+                  <brick-input name="name" label="Name"></brick-input>
+                  <brick-input name="number" label="Phone Number"></brick-input>
+                  <brick-action target="detail-form" action="saveFormData">
+                    <button>Save</button>
+                  </brick-action>
+                </brick-form>
+              </brick-layout>
+            </brick-card>
+          </brick-deck>
+        </brick-card>
+
+        <!-- todo -->
+        <brick-card id="2">
+          2
+        </brick-card>
+
+        <!-- superb -->
+        <brick-card id="3">
+          3
+        </brick-card>
+
+      </brick-deck>
+
+
+      <!-- the detail -->
+      <brick-tabbar>
+        <brick-tabbar-tab target="contact" selected><i class="fa fa-group"></i></brick-tabbar-tab>
+        <brick-tabbar-tab target="2">2</brick-tabbar-tab>
+        <brick-tabbar-tab target="3">3</brick-tabbar-tab>
+      </brick-tabbar>
+    </brick-layout>
+
+  <script>
+    var list = document.querySelector("#contact-list");
+    var detail = document.querySelector("#contact-detail-card");
+    var form = document.querySelector("#detail-form");
+    list.addEventListener("select", function (e) {
+      detail.reveal();
+      form.setAttribute("name",e.detail.name);
+    });
+  </script>
+  </body>
+</html>
