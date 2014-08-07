@@ -36,8 +36,6 @@
     }
   };
 
-
-
   BrickFormElementPrototype.loadFormData = function () {
     var self = this;
     self.storage.get(self.name).then(function(data){
@@ -102,7 +100,6 @@
     },
     'elements': {
       get: function() {
-        console.log("inputs",this.querySelectorAll("input, select"));
         return this.querySelectorAll("input, select");
       }
     },
