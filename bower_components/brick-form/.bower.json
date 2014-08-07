@@ -25,11 +25,11 @@
   "devDependencies": {
     "brick-storage-indexeddb": "mozbrick/brick-storage-indexeddb"
   },
-  "_release": "0bf1d6ad8d",
+  "_release": "77c470125a",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "0bf1d6ad8d6ee90bdb244082ba16eb2feb98056a"
+    "commit": "77c470125a883df2068ddf44032e40564720788d"
   },
   "_source": "git://github.com/mozbrick/brick-form.git",
   "_target": "*",
