@@ -13,6 +13,10 @@
     }
     self.appendChild(self.form);
 
+    // use querySelector because form.elements
+    // does not work in chrome
+    self.inputElements = self.querySelectorAll("input, select");
+
     if (self.autosave) {
       self.form.addEventListener("change", function(){
         self.saveFormData();
@@ -23,9 +27,8 @@
       e.preventDefault();
       self.saveFormData();
     });
-    if (self.name) {
-      self.loadFormData();
-    }
+
+    self.loadFormData();
   };
 
   BrickFormElementPrototype.attributeChangedCallback = function (attr, oldVal, newVal) {
@@ -100,7 +103,7 @@
     },
     'elements': {
       get: function() {
-        return this.querySelectorAll("input, select");
+        return this.inputElements;
       }
     },
     'keyname': {
