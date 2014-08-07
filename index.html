@@ -101,6 +101,7 @@
     var form = document.querySelector("#detail-form");
     // generate sample data:
     var store = document.querySelector("#peoplestore");
+    window.addEventListener("webcomponentsready", function () {
     store.size()
       .then(function (size) {
         if (size === 0) {
@@ -131,6 +132,8 @@
       .then(function () {
         list.render();
       });
+    });
+
     list.addEventListener("select", function (e) {
       detail.reveal();
       form.setAttribute("name",e.detail.name);
