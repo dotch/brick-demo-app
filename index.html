@@ -59,8 +59,6 @@
               <brick-layout>
                 <brick-appbar>
                   <button id="back">back</button>
-                  <brick-action source="back" target="contact-list-card" action="reveal">
-                  </brick-action>
                   <h1>Detail</h1>
                 </brick-appbar>
                 <brick-form storage="peoplestore" id="detail-form">
@@ -100,6 +98,7 @@
     var list = document.querySelector("#contact-list");
     var detail = document.querySelector("#contact-detail-card");
     var form = document.querySelector("#detail-form");
+    var back = document.querySelector("#back");
     // generate sample data:
     var store = document.querySelector("#peoplestore");
     window.addEventListener("WebComponentsReady", function () {
@@ -139,6 +138,9 @@
     list.addEventListener("select", function (e) {
       detail.reveal();
       form.setAttribute("name",e.detail.name);
+    });
+    back.addEventListener("click", function () {
+      document.querySelector("#contact-list-card").reveal();
     });
   </script>
   </body>
