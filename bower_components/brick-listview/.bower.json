@@ -26,11 +26,11 @@
     "platform": "Polymer/platform",
     "brick-storage-indexeddb": "mozbrick/brick-storage-indexeddb#master"
   },
-  "_release": "3415e615f2",
+  "_release": "1bb46d3541",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "3415e615f2534da095d780c452d5707e2c1ee1ea"
+    "commit": "1bb46d3541433596efa2d928c4c068b6ae5811a8"
   },
   "_source": "git://github.com/mozbrick/brick-listview.git",
   "_target": "*",
