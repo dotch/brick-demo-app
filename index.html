@@ -32,20 +32,17 @@
     <link rel="stylesheet" href="//code.cdn.mozilla.net/fonts/fira.css">
     <script src="bower_components/platform/platform.js"></script>
     <script src="bower_components/IndexedDBShim/dist/IndexedDBShim.js"></script>
-  </head>
-  <body unresolved>
     <link rel="import" href="bower_components/brick/dist/brick.html">
     <link rel="import" href="bower_components/x-gif/dist/x-gif.html">
     <link rel="import" href="bower_components/superb-word/dist/superb-word.html">
 
+  </head>
+  <body unresolved>
 
-
-    <!-- the main layout -->
     <brick-layout>
-      <!-- the content -->
+
       <brick-deck selected-index="0">
 
-        <!-- people list -->
         <brick-card selected id="contact">
           <brick-deck selected-index="0" transition-type="slide-left">
             <brick-card selected id="contact-list-card">
@@ -79,7 +76,6 @@
           </brick-deck>
         </brick-card>
 
-        <!-- todo -->
         <brick-card id="2">
           <brick-layout>
             <!-- the calendar database -->
@@ -96,7 +92,6 @@
           </brick-layout>
         </brick-card>
 
-        <!-- superb -->
         <brick-card id="3" style="text-align: center;">
           <h1>Interoperability is <superb-word></superb-word></h1>
           <h3>&lt;x-gif&gt;</h3>
@@ -112,6 +107,7 @@
         <brick-tabbar-tab target="2"><i class="fa fa-calendar"></i></brick-tabbar-tab>
         <brick-tabbar-tab target="3"><i class="fa fa-rocket"></i></brick-tabbar-tab>
       </brick-tabbar>
+
     </brick-layout>
 
   <script>
