@@ -33,10 +33,9 @@
   </head>
   <body unresolved>
     <link rel="import" href="bower_components/brick/dist/brick.html">
+    <link rel="import" href="bower_components/x-gif/dist/x-gif.html">
 
-    <!-- the database -->
-    <brick-storage-indexeddb name="test" keyname="name" id="peoplestore">
-    </brick-storage-indexeddb>
+
 
     <!-- the main layout -->
     <brick-layout>
@@ -47,6 +46,9 @@
         <brick-card selected id="contact">
           <brick-deck selected-index="0" transition-type="slide-left">
             <brick-card selected id="contact-list-card">
+              <!-- the people database -->
+              <brick-storage-indexeddb name="test" keyname="name" id="peoplestore">
+              </brick-storage-indexeddb>
               <brick-layout>
                 <brick-appbar>
                   <h1>Contacts</h1>
@@ -58,6 +60,7 @@
             <brick-card id="contact-detail-card">
               <brick-layout>
                 <brick-appbar>
+                  <brick-action source="back" target="contact-list-card" action="reveal"></brick-action>
                   <button id="back">back</button>
                   <h1>Detail</h1>
                 </brick-appbar>
@@ -75,21 +78,31 @@
 
         <!-- todo -->
         <brick-card id="2">
-          2
+          <brick-layout>
+            <!-- the calendar database -->
+            <brick-storage-indexeddb name="dates" keyname="date" id="calendarstore">
+            </brick-storage-indexeddb>
+            <brick-calendar id="calendar"></brick-calendar>
+            <brick-form storage="calendarstore" id="day-form">
+              <brick-input name="notes" multiline rows="5">
+              </brick-input>
+              <brick-action target="day-form" action="saveFormData">
+                <button>Save</button>
+              </brick-action>
+            </brick-form>
+          </brick-layout>
         </brick-card>
 
         <!-- superb -->
         <brick-card id="3">
-          3
+          <x-gif src="http://i.imgur.com/iKXH4E2.gif" ping-pong></x-gif>
         </brick-card>
 
       </brick-deck>
 
-
-      <!-- the detail -->
       <brick-tabbar>
         <brick-tabbar-tab target="contact" selected><i class="fa fa-group"></i></brick-tabbar-tab>
-        <brick-tabbar-tab target="2">2</brick-tabbar-tab>
+        <brick-tabbar-tab target="2"><i class="fa fa-calendar"></i></brick-tabbar-tab>
         <brick-tabbar-tab target="3">3</brick-tabbar-tab>
       </brick-tabbar>
     </brick-layout>
@@ -98,7 +111,8 @@
     var list = document.querySelector("#contact-list");
     var detail = document.querySelector("#contact-detail-card");
     var form = document.querySelector("#detail-form");
-    var back = document.querySelector("#back");
+    var calendar = document.querySelector("#calendar");
+    var dayForm = document.querySelector("#day-form");
     // generate sample data:
     var store = document.querySelector("#peoplestore");
     window.addEventListener("WebComponentsReady", function () {
@@ -139,9 +153,14 @@
       detail.reveal();
       form.setAttribute("name",e.detail.name);
     });
-    back.addEventListener("click", function () {
-      document.querySelector("#contact-list-card").reveal();
+
+    console.log(calendar);
+    calendar.addEventListener("datetoggleon", function (e) {
+      var date = e.detail.iso;
+      console.log(date);
+      dayForm.setAttribute("name", date);
     });
+
   </script>
   </body>
 </html>

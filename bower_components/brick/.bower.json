@@ -31,16 +31,17 @@
     "brick-menu": "mozbrick/brick-menu",
     "brick-storage-indexeddb": "mozbrick/brick-storage-indexeddb",
     "brick-tabbar": "mozbrick/brick-tabbar",
-    "es6-promise": "components/es6-promise#~1.0.0"
+    "es6-promise": "components/es6-promise#~1.0.0",
+    "brick-dialog": "mozbrick/brick-dialog"
   },
   "devDependencies": {
     "platform": "Polymer/platform#~0.3.4"
   },
-  "_release": "e649290479",
+  "_release": "15c0f1c57b",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "e649290479ccd2c3b1712a94bb1a0470e7bdd427"
+    "commit": "15c0f1c57b3654f551b7ee44b7a38a3dd9fbe178"
   },
   "_source": "git://github.com/mozbrick/brick.git",
   "_target": "master",
