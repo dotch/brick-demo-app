@@ -37,11 +37,11 @@
   "devDependencies": {
     "platform": "Polymer/platform#~0.3.4"
   },
-  "_release": "15c0f1c57b",
+  "_release": "96887dc692",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "15c0f1c57b3654f551b7ee44b7a38a3dd9fbe178"
+    "commit": "96887dc692d33237dfec9eb06f947dc782173261"
   },
   "_source": "git://github.com/mozbrick/brick.git",
   "_target": "master",
