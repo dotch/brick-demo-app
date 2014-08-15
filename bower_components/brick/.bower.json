@@ -21,8 +21,10 @@
   "dependencies": {
     "brick-action": "mozbrick/brick-action",
     "brick-appbar": "mozbrick/brick-appbar",
+    "brick-button": "mozbrick/brick-button",
     "brick-calendar": "mozbrick/brick-calendar",
     "brick-deck": "mozbrick/brick-deck",
+    "brick-dialog": "mozbrick/brick-dialog",
     "brick-flipbox": "mozbrick/brick-flipbox",
     "brick-form": "mozbrick/brick-form",
     "brick-input": "mozbrick/brick-input",
@@ -31,17 +33,16 @@
     "brick-menu": "mozbrick/brick-menu",
     "brick-storage-indexeddb": "mozbrick/brick-storage-indexeddb",
     "brick-tabbar": "mozbrick/brick-tabbar",
-    "es6-promise": "components/es6-promise#~1.0.0",
-    "brick-dialog": "mozbrick/brick-dialog"
+    "es6-promise": "components/es6-promise#~1.0.0"
   },
   "devDependencies": {
     "platform": "Polymer/platform#~0.3.4"
   },
-  "_release": "80245c59c4",
+  "_release": "65ecdb5c96",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "80245c59c4c0e9bf978990b4f80a88ad8e4c9c7f"
+    "commit": "65ecdb5c96fad996010a6efbf70b6168734e4aec"
   },
   "_source": "git://github.com/mozbrick/brick.git",
   "_target": "master",

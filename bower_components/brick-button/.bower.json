@@ -1,0 +1,38 @@
+{
+  "name": "brick-button",
+  "homepage": "https://github.com/mozbrick/brick-button",
+  "authors": [
+    "mozilla"
+  ],
+  "description": "A Brick Component",
+  "main": "dist/brick-button.html",
+  "keywords": [
+    "brick",
+    "webcomponents"
+  ],
+  "license": "ISC",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "brick-common": "*",
+    "platform": "Polymer/platform",
+    "brick-action": "mozbrick/brick-action"
+  },
+  "devDependencies": {
+    "brick-dialog": "mozbrick/brick-dialog"
+  },
+  "_release": "7cf81b9228",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "7cf81b9228a0fe2d96abe0e316377640f4d6c93d"
+  },
+  "_source": "git://github.com/mozbrick/brick-button.git",
+  "_target": "*",
+  "_originalSource": "mozbrick/brick-button"
+}

@@ -10,6 +10,6 @@
   },
   "_source": "git://github.com/axemclion/IndexedDBShim.git",
   "_target": "*",
-  "_originalSource": "axemclion/IndexedDBShim",
+  "_originalSource": "IndexedDBShim",
   "_direct": true
 }

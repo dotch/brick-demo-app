@@ -22,11 +22,11 @@
     "platform": "Polymer/platform",
     "brick-common": "~0.1.3"
   },
-  "_release": "01048386ba",
+  "_release": "7929259b43",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "01048386ba120fba98cafd64762d747b9f07fe1e"
+    "commit": "7929259b43658caba09318b39ac78d89b923281f"
   },
   "_source": "git://github.com/mozbrick/brick-appbar.git",
   "_target": "*",

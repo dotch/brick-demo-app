@@ -158,9 +158,8 @@
     });
 
     console.log(calendar);
-    calendar.addEventListener("datetoggleon", function (e) {
+    calendar.addEventListener("datetap", function (e) {
       var date = e.detail.iso;
-      console.log(date);
       dayForm.setAttribute("name", date);
     });
 

@@ -22,11 +22,11 @@
     "platform": "Polymer/platform",
     "brick-common": "~0.1.4"
   },
-  "_release": "abfdc1029e",
+  "_release": "3e18b0c244",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "abfdc1029e2dc9d466ea089df4fce46a21d52464"
+    "commit": "3e18b0c2446680727443502eb52c41d227bcb06e"
   },
   "_source": "git://github.com/mozbrick/brick-input.git",
   "_target": "*",

@@ -4,7 +4,9 @@
     if (tabEl.parentNode.nodeName.toLowerCase() === 'brick-tabbar') {
       var targetEvent = tabEl.targetEvent;
       var target = tabEl.targetElement;
-      target.dispatchEvent(new CustomEvent(targetEvent, {'bubbles': true}));
+      if (target) {
+        target.dispatchEvent(new CustomEvent(targetEvent, {'bubbles': true}));
+      }
     }
   }
 
@@ -52,11 +54,7 @@
     },
     'targetElement': {
       get: function() {
-        if (this.overrideElement) {
-          return this.overrideElement;
-        } else {
-          return document.getElementById(this.target);
-        }
+        return this.overrideElement ||  document.getElementById(this.target);
       },
       set: function(newVal) {
         this.overrideElement = newVal;
@@ -65,8 +63,10 @@
     }
   });
 
-  window.BrickTabbarTabElement = document.registerElement('brick-tabbar-tab', {
-    prototype: BrickTabbarTabElementPrototype
-  });
+  if (!window.BrickTabbarTabElement) {
+    window.BrickTabbarTabElement = document.registerElement('brick-tabbar-tab', {
+      prototype: BrickTabbarTabElementPrototype
+    });
+  }
 
 })();

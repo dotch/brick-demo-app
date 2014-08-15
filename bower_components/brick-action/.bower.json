@@ -10,7 +10,7 @@
     "brick",
     "webcomponents"
   ],
-  "license": "MIT",
+  "license": "ISC",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -25,11 +25,11 @@
   "devDependencies": {
     "brick-flipbox": "mozbrick/brick-flipbox"
   },
-  "_release": "ad251d6b48",
+  "_release": "c2d51dc6bf",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "ad251d6b48b3595d050a4cb8867fd0a765a3c655"
+    "commit": "c2d51dc6bfd780ca45a4c27e8a0621a6450077c2"
   },
   "_source": "git://github.com/mozbrick/brick-action.git",
   "_target": "*",

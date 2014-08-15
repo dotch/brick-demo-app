@@ -22,11 +22,11 @@
     "platform": "Polymer/platform",
     "brick-common": "~0.1.4"
   },
-  "_release": "e22cdc860e",
+  "_release": "7899df3f19",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "e22cdc860eb11cf677cc838d7f711ef45d215c3c"
+    "commit": "7899df3f19bc979fd63db3b9504bc70b28dcfd4a"
   },
   "_source": "git://github.com/mozbrick/brick-deck.git",
   "_target": "*",

@@ -47,7 +47,7 @@
 
     // import template
     var importDoc = currentScript.ownerDocument;
-    var templateContent = importDoc.querySelector('template').content;
+    var templateContent = importDoc.querySelector('#brick-input-template').content;
 
     // fix styling for polyfill
     shimShadowStyles(templateContent.querySelectorAll('style'), 'brick-input');
@@ -135,7 +135,6 @@
   };
 
   // Attribute handlers
-
   var attrs = {
 
   };
@@ -146,9 +145,10 @@
   });
 
   // Register the element
-
-  window.BrickInputElement = document.registerElement('brick-input', {
-    prototype: BrickInputElementPrototype
-  });
+  if (!window.BrickInputElement) {
+    window.BrickInputElement = document.registerElement('brick-input', {
+      prototype: BrickInputElementPrototype
+    });
+  }
 
 })();

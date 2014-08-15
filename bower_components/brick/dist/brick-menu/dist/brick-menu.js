@@ -9,7 +9,7 @@
   BrickMenuElementPrototype.attachedCallback = function() {
 
     var importDoc = currentScript.ownerDocument;
-    var template = importDoc.querySelector('template');
+    var template = importDoc.querySelector('#brick-menu-template');
 
     // fix styling for polyfill
     if (Platform.ShadowCSS) {
@@ -29,8 +29,10 @@
   };
 
   // Register the element
-  window.BrickMenuElement = document.registerElement('brick-menu', {
-    prototype: BrickMenuElementPrototype
-  });
+  if (!window.BrickMenuElement) {
+    window.BrickMenuElement = document.registerElement('brick-menu', {
+      prototype: BrickMenuElementPrototype
+    });
+  }
 
 })();

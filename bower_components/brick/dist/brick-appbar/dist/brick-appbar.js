@@ -10,7 +10,7 @@
   BrickAppbarElementPrototype.attachedCallback = function () {
 
     var importDoc = currentScript.ownerDocument;
-    var template = importDoc.querySelector('template');
+    var template = importDoc.querySelector('#brick-appbar-template');
 
     // fix styling for polyfill
     if (Platform.ShadowCSS) {
@@ -28,8 +28,10 @@
     shadowRoot.appendChild(template.content.cloneNode(true));
   };
 
-  window.BrickAppbarElement = document.registerElement('brick-appbar', {
-    prototype: BrickAppbarElementPrototype
-  });
+  if (!window.BrickAppbarElement) {
+    window.BrickAppbarElement = document.registerElement('brick-appbar', {
+      prototype: BrickAppbarElementPrototype
+    });
+  }
 
 })();

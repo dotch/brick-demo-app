@@ -51,24 +51,27 @@ gulp build
 
 If you'd like to work on *all* the Brick components at once, try this handy script:
 
-```sh
+```bash
+#!/bin/bash
 repos=(
   brick
   brick-action
   brick-appbar
+  brick-button
   brick-calendar
   brick-common
   brick-deck
   brick-dialog
   brick-flipbox
   brick-form
+  brick-input
   brick-layout
   brick-listview
   brick-menu
   brick-storage-indexeddb
   brick-tabbar
 )
-for repo in $repos
+for repo in "${repos[@]}"
 do
   git clone https://github.com/mozbrick/$repo.git;
 done
@@ -80,15 +83,17 @@ Here is a list of the components currently in the primary distribution of Brick:
 
 * [brick-action](https://github.com/mozbrick/brick-action)
 * [brick-appbar](https://github.com/mozbrick/brick-appbar)
+* [brick-button](https://github.com/mozbrick/brick-button)
 * [brick-calendar](https://github.com/mozbrick/brick-calendar)
 * [brick-deck](https://github.com/mozbrick/brick-deck)
 * [brick-dialog](https://github.com/mozbrick/brick-dialog)
 * [brick-flipbox](https://github.com/mozbrick/brick-flipbox)
 * [brick-form](https://github.com/mozbrick/brick-form)
+* [brick-input](https://github.com/mozbrick/brick-input)
 * [brick-layout](https://github.com/mozbrick/brick-layout)
+* [brick-listview](https://github.com/mozbrick/brick-listview)
 * [brick-menu](https://github.com/mozbrick/brick-menu)
 * [brick-storage-indexeddb](https://github.com/mozbrick/brick-storage-indexeddb)
 * [brick-tabbar](https://github.com/mozbrick/brick-tabbar)
 
 If you encounter issues with a component, please file issues against the individual component repositories.
-

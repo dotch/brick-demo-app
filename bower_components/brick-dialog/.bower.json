@@ -26,11 +26,11 @@
     "brick-action": "mozbrick/brick-action",
     "brick-input": "mozbrick/brick-input"
   },
-  "_release": "a1d53d12da",
+  "_release": "76f3321ac9",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "a1d53d12da4eace0d9186bdddafdebde45cae6c2"
+    "commit": "76f3321ac9bd41b15852b0174f2ec8e6ca3d46a1"
   },
   "_source": "git://github.com/mozbrick/brick-dialog.git",
   "_target": "*",

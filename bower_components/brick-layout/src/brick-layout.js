@@ -22,7 +22,7 @@
 
   BrickLayoutElementPrototype.attachedCallback = function() {
     var importDoc = currentScript.ownerDocument;
-    var template = importDoc.querySelector('template');
+    var template = importDoc.querySelector('#brick-layout-template');
 
     // fix styling for polyfill
     if (Platform.ShadowCSS) {
@@ -39,9 +39,10 @@
     var shadowRoot = this.createShadowRoot();
     shadowRoot.appendChild(template.content.cloneNode(true));
   };
-
-  window.BrickLayoutElement = document.registerElement('brick-layout', {
-    prototype: BrickLayoutElementPrototype
-  });
+  if (!window.BrickLayoutElement) {
+    window.BrickLayoutElement = document.registerElement('brick-layout', {
+      prototype: BrickLayoutElementPrototype
+    });
+  }
 
 })();

@@ -53,7 +53,16 @@
   //ensure the children is a brick-card (or wraps it with one)
   function ensureIsCard(child){
     if(child.tagName !== 'BRICK-CARD'){
-      var wrap = card.cloneNode();
+      var wrap = card.cloneNode(),
+          attributes = ['selected', 'transition-type'],
+          attribute;
+
+      for(var i=0, max=attributes.length; i<max; i++){
+        attribute = attributes[i];
+        if(child.hasAttribute(attribute)){
+          wrap.setAttribute(attribute, child.getAttribute(attribute));
+        }
+      }
       child.parentNode.replaceChild(wrap, child);
       wrap.appendChild(child);
     }
@@ -80,10 +89,11 @@
 
   BrickDeckElementPrototype.createdCallback = function() {
     this.ns = {};
-    var children = this.children, i, max;
+    var children = this.children, i, max, anyChildSelected = false;
 
     for(i=0, max=children.length; i<max; i++){
       ensureIsCard(children[i]);
+      anyChildSelected = anyChildSelected || children[i].hasAttribute('selected');
     }
 
     var observer = new MutationObserver(function(mutations) {
@@ -96,12 +106,15 @@
     });
 
     observer.observe(this, { childList: true });
+    if(!anyChildSelected){
+      this.showCard(this.selectedIndex, {skipTransition:true});
+    }
   };
 
   BrickDeckElementPrototype.attachedCallback = function() {
 
     var importDoc = currentScript.ownerDocument;
-    var template = importDoc.querySelector('template');
+    var template = importDoc.querySelector('#brick-deck-template');
 
     // fix styling for polyfill
     if (Platform.ShadowCSS) {
@@ -284,8 +297,10 @@
   });
 
   // Register the element
-  window.BrickDeckElement = document.registerElement('brick-deck', {
-    prototype: BrickDeckElementPrototype
-  });
+  if (!window.BrickDeckElement) {
+    window.BrickDeckElement = document.registerElement('brick-deck', {
+      prototype: BrickDeckElementPrototype
+    });
+  }
 
 })();

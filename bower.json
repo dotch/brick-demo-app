@@ -1,0 +1,23 @@
+{
+  "name": "brick-app",
+  "version": "0.0.0",
+  "homepage": "https://github.com/dotch/brick-demo-app",
+  "authors": [
+    "dotch <cweiss@mozilla.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "brick": "mozbrick/brick#master",
+    "IndexedDBShim": "*",
+    "x-gif": "~0.1.1",
+    "superb-word": "~0.0.2"
+  }
+}

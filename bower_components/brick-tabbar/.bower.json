@@ -22,11 +22,11 @@
     "platform": "Polymer/platform",
     "brick-common": "~0.1.3"
   },
-  "_release": "52390b9084",
+  "_release": "3696c01e3c",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "52390b9084f9a64c4b7fdf0c37d616456407c9d2"
+    "commit": "3696c01e3cb5fbcd246934884e585cb13787958d"
   },
   "_source": "git://github.com/mozbrick/brick-tabbar.git",
   "_target": "*",
